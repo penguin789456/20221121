@@ -20,7 +20,7 @@ namespace _20221121
         protected void Button1_Click(object sender, EventArgs e)
         {
             string name = namebox.Text,gender=genserbox.Text;
-            Response.Redirect("WebForm3.aspx?name="+name+"&gender="+ gender);
+            Response.Redirect("WebForm3.aspx?name="+Server.UrlEncode(name)+"&gender="+ Server.UrlEncode(gender));
             
         }
     }

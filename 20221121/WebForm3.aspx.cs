@@ -16,12 +16,16 @@ namespace _20221121
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            foreach(string key in Request.QueryString)
+            string[] html_value = new string[5];
+            if (Request.QueryString != null)
             {
-                Response.Write("key:"+key+",keyvalue:"+Request.QueryString[key]+"<br>");
+                for(int i = 0; i < Request.QueryString.Count; i++)
+                {
+                    html_value[i] = Server.UrlDecode(Request.QueryString[i]);
+                }
             }
-            
-            
+            Label1.Text = html_value[0];
+            Label2.Text = html_value[1];
         }
     }
 }

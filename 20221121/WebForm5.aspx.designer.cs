@@ -11,7 +11,7 @@ namespace _20221121
 {
 
 
-    public partial class WebForm1
+    public partial class WebForm5
     {
 
         /// <summary>
