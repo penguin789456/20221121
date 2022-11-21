@@ -19,8 +19,13 @@ namespace _20221121
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string name = namebox.Text,gender=genserbox.Text;
-            Response.Redirect("WebForm3.aspx?name="+Server.UrlEncode(name)+"&gender="+ Server.UrlEncode(gender));
+            TextBox[] userbox = { namebox, genserbox };
+            string[] userinfor = new string[userbox.Length];
+            for(int i = 0; i < userinfor.Length; i++)
+            {
+                userinfor[i] = Server.UrlEncode(userbox[i].Text);
+            }
+            Response.Redirect("WebForm3.aspx?name="+userinfor[0]+"&gender="+ userinfor[1]);
             
         }
     }
